@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Ensures padding doesn't add to width */
+        }
+
+        body {
+            overflow-x: hidden; /* Prevents horizontal scrolling */
+            margin: 0; /* Remove any default body margin */
+        }
+
+        .head_for_every_page {
+            display: flex;
+            justify-content: space-between; /* Aligns logo and icons on the sides */
+            align-items: center;
+            padding: 10px 20px;
+            background: linear-gradient(to right, #77f97c, #8dc890);
+            width: 100vw; /* Full viewport width */
+            height: 70px; /* Fixed height */
+            position: fixed; /* Fixes the header at the top */
+            top: 0; /* Aligns header to the top */
+            left: 0; /* Aligns header to the left */
+            z-index: 1000; /* Ensures the header stays on top of other elements */
+        }
+
+        .web_logo {
+            width: 100px;  /* Adjust logo size */
+            height: 50px; /* Adjust logo size */
+            border-radius: 100%;            
+            transition: transform 0.2s; /* Smooth hover transition */
+        }
+
+        .web_logo:hover {
+            transform: scale(1.5);
+        }
+
+        .social_icons {
+            margin-left: 45px;
+            font-size: 35px;
+            color: #424be6; /* Icon color (optional) */
+        }
+
+        .slogan_main{
+            display: block;
+            margin-left: 190px;
+            width: 70%;
+        }
+
+        /* Main content styling */
+        .main-content {
+            padding-top: 90px; /* Space for fixed header */
+            text-align: center; /* Center content */
+        }
+
+        .content_teller {
+            background-color: #3ae48a;
+
+            display: flex;
+            justify-content: space-between;
+            margin: 100px;
+        }
+
+        a {
+            text-decoration: none; /* Remove underline from links */
+            color: rgb(0, 0, 255) ;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .pages_detail {
+            margin: 30px;
+            font-size: 24px ;
+            display: flex; /* Aligns icon and text horizontally */
+            align-items: center; /* Centers icon and text vertically */
+        }
+
+        .pages_detail i {
+            margin-right: 10px; /* Space between icon and text */
+            font-size: 30px; /* Adjust icon size */
+            color: #534f58; /* Icon color */
+        }
+
+        .rotating-image {
+            width: 300px; /* Adjust the size as necessary */
+            height: auto; /* Keep the aspect ratio */
+            transition: transform 1s; /* Smooth rotation */
+        }
+
+        .rotating-image:hover {
+            transform: rotate(360deg); /* Rotate the image on hover */
+        }
+    </style>
+</head>
+<body>
+    <header class="head_for_every_page">
+        <div>
+            <a href="mainpage.html">
+                <img src="images/logo.png" alt="home page" class="web_logo">
+            </a>
+        </div>
+        <div>
+            <img src="images/slogan.gif" alt="" class="slogan_main">
+        </div>
+        <div>
+            <a href="https://www.facebook.com" target="_blank" class="social_icons">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" class="social_icons">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" class="social_icons">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.youtube.com" target="_blank" class="social_icons">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+    </header>
+
+    <div class="content_teller">
+        <div class="recipe_details">
+            <a href="#" class="pages_detail">
+                <i class="fas fa-carrot"></i> <!-- Icon for Veg Recipes -->
+                Veg Recipes
+            </a>
+            <a href="#" class="pages_detail">
+                <i class="fas fa-drumstick-bite"></i> <!-- Icon for Non-Veg Recipes -->
+                Non-Veg Recipes
+            </a>
+        </div>
+
+        <div>
+            <a href="mainpage.html">
+                <img src="images/middle_logo.gif" alt="Middle Logo" class="rotating-image">
+            </a>
+        </div>
+
+        <div class="other_details">
+            <a href="#" class="pages_detail">
+                <i class="fas fa-info-circle"></i> <!-- Icon for About Us -->
+                About Us
+            </a>
+            <a href="#" class="pages_detail">
+                <i class="fas fa-shopping-cart"></i> <!-- Icon for Shop Products -->
+                Shop Products
+            </a>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="main-content">
+        <h1>Welcome to the Recipe Website</h1>
+        <p>Here you can find a variety of delicious recipes!</p>
+        <!-- Add more content here -->
+    </div>
+</body>
+</html>
