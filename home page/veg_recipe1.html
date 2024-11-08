@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <style>
+        
+
+.head_for_every_page{
+   background-color: #0093E9;
+background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+
+
+}
+
+.web_logo{
+   width: 120px;
+   height: 80%;
+   object-fit: cover;
+   border-radius: 70%;
+}
+
+/* for 3d animation of web logo */
+
+.web_logo{
+  transform: perspective(400px) rotate3d( 1, 0, 1, 15deg);
+  opacity: linear-gradient (135deg, #00c 40% , #000, #000c 60%);
+}
+.web_logo:hover {
+   transform: perspective(400px) rotate3d( 1, -1, 1 , -15deg);
+   /* transform: scale(1.2); */
+}
+
+
+
+
+
+
+
+
+
+/* list of social media tags  */
+       
+/* social icons using api  */
+.slider-nav {
+   list-style: none;
+   display: flex;
+   gap: 30px; /* gap between the social icons  */
+   padding: 0;
+}
+
+.slider-nav-item {
+   font-size: 30px;
+   margin: 20px;
+}
+
+
+a{
+   text-decoration:none;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <header class="head_for_every_page">
+        <div>
+            <a href="main_page1.html">
+                <img src="images/logo.png" alt="Website Logo" class="web_logo">
+            </a>
+        </div>
+
+
+
+    
+<!-- social icons using api -->
+        <div>
+            <ul class="slider-nav">
+                <li class="slider-nav-item">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </li>
+                <li class="slider-nav-item">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li class="slider-nav-item">
+                    <a href="https://www.youtube.com/watch?v=_XiOcsj3oNI&t=50s" target="_blank"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li class="slider-nav-item">
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </li>
+                <li class="slider-nav-item">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </li>
+            </ul>
+            
+        </div>
+    
+                                      
+                    
+   
+
+       
+
+    </header>
+
+</body>
+</html>
