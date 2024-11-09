@@ -1,0 +1,736 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veg Recipes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+     <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
+
+.head_for_every_page{
+   background-color: #0093E9;
+background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+
+.web_logo{
+   width: 120px;
+   height: 80%;
+   object-fit: cover;
+   border-radius: 70%;
+}
+
+/* for 3d animation of web logo */
+
+.web_logo{
+  transform: perspective(400px) rotate3d( 1, 0, 1, 15deg);
+  opacity: linear-gradient (135deg, #00c 40% , #000, #000c 60%);
+}
+.web_logo:hover {
+   transform: perspective(400px) rotate3d( 1, -1, 1 , -15deg);
+   /* transform: scale(1.2); */
+}
+
+
+
+
+
+
+
+
+
+/* list of social media tags  */
+       
+/* social icons using api  */
+.slider-nav {
+   list-style: none;
+   display: flex;
+   gap: 30px; /* gap between the social icons  */
+   padding: 0;
+}
+
+.slider-nav-item {
+   font-size: 30px;
+   margin: 20px;
+}
+
+
+a{
+   text-decoration:none;
+}
+
+
+
+.container{
+    max-width: 66vw;
+    padding: 2rem 1rem;
+    margin: 0 auto;
+    /* background-color: aqua; */
+}
+
+.header_container{
+    margin-bottom: 2.8rem;
+}
+
+.header_title{
+    margin-bottom: 1rem;
+    font-size: 1.7rem;
+    line-height: 2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.header_desc{
+    max-width: 568px;
+    text-align: center;
+    color: rgb(105, 99, 99);
+    margin: 0 auto;
+}
+.main_container{
+    display: grid;
+    gap: 1.5rem;
+    /* grid-template-columns: repeat(1, 1fr); */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 400px));
+    justify-content: center;
+
+}
+
+/* @media (min-width:935px) {
+    .main_container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width:1380px) {
+    .main_container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (min-width:1870px) {
+    .main_container{
+        grid-template-columns: repeat(4, 1fr);
+    }
+} */
+
+.card_container{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(233, 224, 224);
+    border-radius: 8px;
+}
+
+.card_image_container{
+    position: relative;
+    overflow: hidden;
+    height: 7rem;
+}
+
+@media (min-width: 768px) {
+    .card_image_container{
+            height: 12rem;
+    }
+}
+
+.card_image{
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.card_title_container{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.card_container:hover .card_image{
+    transform: scale(1.1);
+    transition-duration: 200ms;
+}
+
+.card_title{
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    margin-bottom: 0.3rem;
+    color: rgb(25, 23, 23);
+}
+
+
+.card_title_anchor:hover .card_title{
+    color:rgb(67, 67, 191);
+}
+
+
+.card_desc{
+    color: rgb(113, 107, 107);
+    font-size: 1rem;
+}
+
+.card_footer_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.author_container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author_avatar_container{
+    height: 2.5rem;
+    width: 2.5rem;
+    overflow: hidden;
+    border: 1px solid rgb(150, 147, 147);
+    border-radius: 50%;
+    background-color: rgb(243, 239, 239);
+}
+
+.author_info_container{
+    display: flex;
+    flex-direction: column;
+}
+
+.author_name{
+    color: rgb(38, 38, 149);
+}
+
+.author_date{
+    color: rgb(136, 126, 126);
+}
+
+.card_tag_container{
+    font-size: 0.79rem;
+    border: 1px solid rgb(76, 71, 71);
+    border-radius: 4px;
+    line-height: 1.3rem;
+    padding: 0.25rem 0.5rem;
+    color: grey;
+}
+
+
+     </style>
+</head>
+<body class="body_container">
+    <header class="head_for_every_page">
+        <div>
+            <a href="1_main_page1.html">
+                <img src="images/logo.png" alt="Website Logo" class="web_logo">
+            </a>
+        </div>
+
+
+
+    
+<!-- social icons using api -->
+        <div>
+            <ul class="slider-nav">
+                <li class="slider-nav-item">
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                </li>
+                <li class="slider-nav-item">
+                    <a href="https://x.com/RaviDahiya00"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li class="slider-nav-item">
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li class="slider-nav-item">
+                    <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
+                </li>
+                <li class="slider-nav-item">
+                    <a href="https://github.com/Ravi-Dahiya-00"><i class="fab fa-github"></i></a>
+                </li>
+            </ul>
+            
+        </div>
+    
+                                      
+    </header>
+
+
+
+
+    <div class="container">
+
+    
+        
+
+        <main class="main_container">
+
+            <!-- card 1 start -->
+            <div class="card_container">
+                <a href="https://youtu.be/oWXlmAeqoUE?si=6X2NiERbPhI0id0P" class="card_image_container">
+                    <img
+                        src="recipe_images/grilled_chicken.jpg"
+                        alt="card 1 image"
+                        class="card_image"
+                        loading="lazy"
+                    />
+                </a>
+
+                <div class="card_title_container">
+                        <h2 class="card_title">Grilled Chicken</h2>
+                    <p class="card_desc">
+                        Succulent grilled chicken with a smoky flavor and a hint of spices.
+                    </p>
+                </div>
+
+                <div class="card_footer_container">
+
+                    <div class="author_container">
+                        <div class="author_avatar_container">
+                            <img 
+                                src="https://api.dicebear.com/7.x/notionists/svg?seed=Ranveer?size=64"
+                                loading="lazy"
+                                class="author_avatar"
+                                alt="avatar 1"
+                            />
+                        </div>
+                        <div class="author_info_container">
+                            <span class="author_name">
+                               <a href="https://www.youtube.com/@SpiceEats">Spice Eats
+                            </a> 
+                            </span>
+                            <span class="author_date">
+                                8 February 1978
+                            </span>
+                        </div>
+                    </div>
+
+                    <div >
+                        <span class="card_tag_container"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- card 1 ends here -->
+
+
+
+            <!-- card 2 starts here  -->
+
+            <div class="card_container">
+                <a href="https://youtu.be/erHhYyqJq6A?si=sKpLOcMQF7ba-vG2" class="card_image_container">
+                    <img
+                        src="recipe_images/chicken_curry.jpeg"
+                        alt="card 1 image"
+                        class="card_image"
+                        loading="lazy"
+                    />
+                </a>
+
+                <div class="card_title_container">
+                        <h2 class="card_title">Chicken Curry</h2>
+                    <p class="card_desc">
+                        A rich and flavorful chicken curry with a perfect blend of spices.
+                    </p>
+                </div>
+
+                <div class="card_footer_container">
+
+                    <div class="author_container">
+                        <div class="author_avatar_container">
+                            <img 
+                                src="https://api.dicebear.com/7.x/notionists/svg?seed=kunal_kapur?size=64"
+                                loading="lazy"
+                                class="author_avatar"
+                                alt="avatar 1"
+                            />
+                        </div>
+                        <div class="author_info_container">
+                            <span class="author_name">
+                               <a href="https://www.youtube.com/@KabitasKitchen">
+                               Kabita's kitchen
+                            </a>
+                            </span>
+                            <span class="author_date">
+                                18 September 1979
+                            </span>
+                        </div>
+                    </div>
+
+                    <div >
+                        <span class="card_tag_container">Non-veg Cuisine</span>
+                    </div>
+                </div>
+            </div>
+            <!-- card 2 ends here -->
+
+
+
+
+            <!-- card 3 starts here  -->
+            <div class="card_container">
+                <a href="https://youtu.be/bX7AyuNMrVY?si=XN8gUoJm2eatlqCK" class="card_image_container">
+                    <img
+                        src="recipe_images/butter_chicken.webp"
+                        alt="card 1 image"
+                        class="card_image"
+                        loading="lazy"
+                    />
+                </a>
+
+                <div class="card_title_container">
+                        <h2 class="card_title">Butter Chicken</h2>
+                    <p class="card_desc">
+                        Succulent cubes of paneer marinated in a blend of yogurt, spices, and herbs, then grilled to perfection. 
+                        A popular Indian appetizer, this dish is smoky, spicy, and full of flavor, perfect for serving at parties or enjoying as a snack.
+                    </p>
+                </div>
+
+                <div class="card_footer_container">
+
+                    <div class="author_container">
+                        <div class="author_avatar_container">
+                            <img 
+                                src="https://api.dicebear.com/7.x/notionists/svg?seed=manwithmask=64"
+                                loading="lazy"
+                                class="author_avatar"
+                                alt="avatar 1"
+                            />
+                        </div>
+                        <div class="author_info_container">
+                            <a href="https://www.bharatzkitchen.com/about-me/">
+                            <span class="author_name">
+                                Bharatzkitchen
+                            </span>
+                        </a>
+                            <span class="author_date">
+                                Sept 9, 1991
+                            </span>
+                        </div>
+                    </div>
+
+                    <div >
+                        <span class="card_tag_container">Butter Chicken</span>
+                    </div>
+                </div>
+            </div>
+            <!-- card 3 ends here -->
+
+
+
+
+
+            <!-- card 4 starts here  -->
+
+            <div class="card_container">
+                <a href="https://youtu.be/qh5WFrZN5Cs?si=zAUKoVgm9Teyq426P" class="card_image_container">
+                    <img
+                        src="recipe_images/Tandoori-Chicken-Recipe.jpg"
+                        alt="card 1 image"
+                        class="card_image"
+                        loading="lazy"
+                    />
+                </a>
+
+                <div class="card_title_container">
+                    <a href="#" class="card_title_anchor">
+                        <h2 class="card_title">Tandoori Chickens</h2>
+                    </a>
+                    <p class="card_desc">
+                        A smoky and spiced chicken dish grilled to perfection in a tandoor.
+                    </p>
+                </div>
+
+                <div class="card_footer_container">
+
+                    <div class="author_container">
+                        <div class="author_avatar_container">
+                            <img 
+                                src="https://api.dicebear.com/7.x/notionists/svg?seed=Sanjeev?size=64"
+                                loading="lazy"
+                                class="author_avatar"
+                                alt="avatar 1"
+                            />
+                        </div>
+                        <div class="author_info_container">
+                            <a href="https://en.wikipedia.org/wiki/Sanjeev_Kapoor">
+                            <span class="author_name">
+                                Sanjeev Kappor 
+                            </span>
+                        </a>
+                            <span class="author_date">
+                                10 April 1964 
+                            </span>
+                        </div>
+                    </div>
+
+                    <div >
+                        <span class="card_tag_container">Tandoori</span>
+                    </div>
+                </div>
+            </div>
+            <!-- card 4 ends here -->
+
+
+
+
+
+            <!-- card 5 starts here  -->
+
+            <div class="card_container">
+                <a href="https://youtu.be/J1gsLMQ1Eps?si=tEhHqWFfHH9BD3Wb" class="card_image_container">
+                    <img
+                        src="recipe_images/fry_fish.webp"
+                        alt="card 1 image"
+                        class="card_image"
+                        loading="lazy"
+                    />
+                </a>
+
+                <div class="card_title_container">
+                    <a href="#" class="card_title_anchor">
+                        <h2 class="card_title">Fish Fry</h2>
+                    </a>
+                    <p class="card_desc">
+                        Crispy, golden fish fillets fried with aromatic spice.
+                    </p>
+                </div>
+
+                <div class="card_footer_container">
+
+                    <div class="author_container">
+                        <div class="author_avatar_container">
+                            <img 
+                                src="https://api.dicebear.com/7.x/notionists/svg?seed=John?size=64"
+                                loading="lazy"
+                                class="author_avatar"
+                                alt="avatar 1"
+                            />
+                        </div>
+                        <div class="author_info_container">
+                            <a href="ttps://www.youtube.com/@KabitasKitchen">
+                            <span class="author_name">
+                               Kabita's Kitchen
+                            </span>
+                        </a>
+                            <span class="author_date">
+                                18 September 1979
+                            </span>
+
+                        </div>
+                    </div>
+
+                    <div >
+                        <span class="card_tag_container">Fry Recipe</span>
+                    </div>
+                </div>
+            </div>
+            <!-- card 5 ends here  -->
+
+
+
+
+
+
+
+
+            <!-- card 6 starts here  -->
+
+            <div class="card_container">
+                <a href="https://youtu.be/OY_dOmBjP54?si=nOCNZ6m7hMDUwyOgT" class="card_image_container">
+                    <img
+                        src="recipe_images/mutton_korma.webp"
+                        alt="card 1 image"
+                        class="card_image"
+                        loading="lazy"
+                    />
+                </a>
+
+                <div class="card_title_container">
+                    <a href="#" class="card_title_anchor">
+                        <h2 class="card_title">Mutton Korma</h2>
+                    </a>
+                    <p class="card_desc">
+                        A rich and flavorful mutton curry with a blend of spices and yogurt
+                    </p>
+                </div>
+
+                <div class="card_footer_container">
+
+                    <div class="author_container">
+                        <div class="author_avatar_container">
+                            <img 
+                                src="https://api.dicebear.com/7.x/notionists/svg?seed=?riyasize=64"
+                                loading="lazy"
+                                class="author_avatar"
+                                alt="avatar 1"
+                            />
+                        </div>
+                        <div class="author_info_container">
+                            <a href="https://www.bharatzkitchen.com/about-me/">
+                            <span class="author_name">
+                                Bharat-z-kitchen
+                            </span>
+                        </a>
+                            <span class="author_date">
+                                Sept 9, 1991
+                            </span>
+                        </div>
+                    </div>
+
+                    <div >
+                        <span class="card_tag_container">Non-Veg Curry</span>
+                    </div>
+                </div>
+            </div>
+            <!-- card 6 ends here -->
+
+
+
+
+
+
+
+
+            <!-- card 7 starts here  -->
+
+            <div class="card_container">
+                <a href="https://youtu.be/VhijkWkuSKo?si=KW4kCJ_tBUK2DUNF" class="card_image_container">
+                    <img
+                        src="recipe_images/chicken_tikka.jpeg"
+                        alt="card 1 image"
+                        class="card_image"
+                        loading="lazy"
+                    />
+                </a>
+
+                <div class="card_title_container">
+                    <a href="#" class="card_title_anchor">
+                        <h2 class="card_title">Chicken Tikka</h3></a></h2>
+                    </a>
+                    <p class="card_desc">
+                        Tender chicken marinated in spices and grilled to perfection
+                    </p>
+                </div>
+
+                <div class="card_footer_container">
+
+                    <div class="author_container">
+                        <div class="author_avatar_container">
+                            <img 
+                                src="https://api.dicebear.com/7.x/notionists/svg?seed=John?size=64"
+                                loading="lazy"
+                                class="author_avatar"
+                                alt="avatar 1"
+                            />
+                        </div>
+                        <div class="author_info_container">
+                            <span class="author_name">
+                                <a href="https://en.wikipedia.org/wiki/Ranveer_Brar">Chef Ranveer Brar 
+                             </a> 
+                             </span>
+                             <span class="author_date">
+                                 8 February 1978
+                             </span> 
+                            </span>
+                        </div>
+                    </div>
+
+                    <div >
+                        <span class="card_tag_container">Tandoori</span>
+                    </div>
+                </div>
+            </div>
+            <!-- card 7 ends here  -->
+
+
+
+
+
+
+
+            <!-- card 8 starts here  -->
+
+            <div class="card_container">
+                <a href="https://youtu.be/Ze_sWsJaIcs?si=IJS3qdRblSb3y8oY" class="card_image_container">
+                    <img
+                        src="recipe_images/Mixed-pakora.webp"
+                        alt="card 1 image"
+                        class="card_image"
+                        loading="lazy"
+                    />
+                </a>
+
+                <div class="card_title_container">
+                    <a href="" class="card_title_anchor">
+                        <h2 class="card_title">BBQ Ribs</h2>
+                    </a>
+                    <p class="card_desc">
+                        Juicy BBQ ribs with a smoky glaze, perfect for any BBQ lover.
+                    </p>
+                </div>
+
+                <div class="card_footer_container">
+
+                    <div class="author_container">
+                        <div class="author_avatar_container">
+                            <img 
+                                src="https://api.dicebear.com/7.x/notionists/svg?seed=kavita?size=64"
+                                loading="lazy"
+                                class="author_avatar"
+                                alt="avatar 1"
+                            />
+                        </div>
+                        <div class="author_info_container">
+                            <span class="author_name">
+                                <a href="https://youtube.fandom.com/wiki/Kabita's_Kitchen">
+                                    Kabita Singh
+                                </a>
+                            </span>
+                            <span class="author_date">
+                                February 21, 1981,
+                            </span>
+                        </div>
+                    </div>
+
+                    <div  >
+                        <span class="card_tag_container">Crispy</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 8 ends here  -->
+
+        </main>
+
+    </div>
+    
+</body>
+</html>
+<!-- 
+
+https://api.dicebear.com/7.x/notionists/svg?seed=John?size=64
+https://source.unsplash.com/random/600×400?healthy -->

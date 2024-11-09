@@ -1,14 +1,32 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Veg Recipes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+     <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <style>
-        
+body{
+    height: 100%;
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
 
 .head_for_every_page{
    background-color: #0093E9;
@@ -16,10 +34,8 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
 display: flex;
 justify-content: space-between;
 align-items: center;
-
-
-
 }
+
 
 .web_logo{
    width: 120px;
@@ -69,89 +85,660 @@ a{
 
 
 
-    </style>
+.container{
+    max-width: 66vw;
+    padding: 2rem 1rem;
+    margin: 0 auto;
+    /* background-color: aqua; */
+}
+
+.header_container{
+    margin-bottom: 2.8rem;
+}
+
+.header_title{
+    margin-bottom: 1rem;
+    font-size: 1.7rem;
+    line-height: 2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.header_desc{
+    max-width: 568px;
+    text-align: center;
+    color: rgb(105, 99, 99);
+    margin: 0 auto;
+}
+.main_container{
+    display: grid;
+    gap: 1.5rem;
+    /* grid-template-columns: repeat(1, 1fr); */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 400px));
+    justify-content: center;
+
+}
+
+/* @media (min-width:935px) {
+    .main_container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width:1380px) {
+    .main_container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (min-width:1870px) {
+    .main_container{
+        grid-template-columns: repeat(4, 1fr);
+    }
+} */
+
+.card_container{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(233, 224, 224);
+    border-radius: 8px;
+}
+
+.card_image_container{
+    position: relative;
+    overflow: hidden;
+    height: 7rem;
+}
+
+@media (min-width: 768px) {
+    .card_image_container{
+            height: 12rem;
+    }
+}
+
+.card_image{
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.card_title_container{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.card_container:hover .card_image{
+    transform: scale(1.1);
+    transition-duration: 200ms;
+}
+
+.card_title{
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    margin-bottom: 0.3rem;
+    color: rgb(25, 23, 23);
+}
+
+
+.card_title_anchor:hover .card_title{
+    color:rgb(67, 67, 191);
+}
+
+
+.card_desc{
+    color: rgb(113, 107, 107);
+    font-size: 1rem;
+}
+
+.card_footer_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.author_container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author_avatar_container{
+    height: 2.5rem;
+    width: 2.5rem;
+    overflow: hidden;
+    border: 1px solid rgb(150, 147, 147);
+    border-radius: 50%;
+    background-color: rgb(243, 239, 239);
+}
+
+.author_info_container{
+    display: flex;
+    flex-direction: column;
+}
+
+.author_name{
+    color: rgb(38, 38, 149);
+}
+
+.author_date{
+    color: rgb(136, 126, 126);
+}
+
+.card_tag_container{
+    font-size: 0.79rem;
+    border: 1px solid rgb(76, 71, 71);
+    border-radius: 4px;
+    line-height: 1.3rem;
+    padding: 0.25rem 0.5rem;
+    color: grey;
+}
+
+
+     </style>
 </head>
-
-
-
-    <body class="recipes_body_container">
-        <div class="recipes_container">
-            <header class="head_for_every_page">
-                <div>
-                    <a href="main_page1.html">
-                        <img src="images/logo.png" alt="Website Logo" class="web_logo">
-                    </a>
-                </div>
-        
-        
-        
-            
-        <!-- social icons using api -->
-                <div>
-                    <ul class="slider-nav">
-                        <li class="slider-nav-item">
-                            <a href="#"><i class="fab fa-facebook"></i></a>
-                        </li>
-                        <li class="slider-nav-item">
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                        </li>
-                        <li class="slider-nav-item">
-                            <a href="https://www.youtube.com/watch?v=_XiOcsj3oNI&t=50s" target="_blank"><i class="fab fa-instagram"></i></a>
-                        </li>
-                        <li class="slider-nav-item">
-                            <a href="#"><i class="fab fa-youtube"></i></a>
-                        </li>
-                        <li class="slider-nav-item">
-                            <a href="#"><i class="fab fa-github"></i></a>
-                        </li>
-                    </ul>
-                    
-        
-                </div>
-            
-                                              
-        
-            </header>
-        
-
-
-            <main class="main_recipe_container">
-                <!-- card 1 starts -->
-                 <div class="recipes_card_container">
-                    <a href="#" class="recipe_card_image_container">
-                        <img src="images/background_image.jpg" alt="">
-                    </a>
-
-                    <div class="recipes_tite_container">
-                        <a href="#" >
-                            <h2 class="recipe_card_title">new recioe </h2>
-                        </a>
-                        <p class="recipe_description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, facilis.
-                        </p>
-                    </div>
-
-                    <div class="recipe_footer_container">
-                        <div class="recipe_author_avtar_container">
-                            <img src="images/background_image.jpg" alt="">
-                        </div>
-                        <div class="recipe_author_info">
-                            <span>
-                                Jhon Doe
-                            </span>
-                            <span>
-                                sept 12 , 2021
-                            </span>
-                        </div>              
-                    </div>
-
-                    <div class="recipe_tag_container">
-                        <span>Technology</span>
-                    </div>
-                 </div>
-           
-            </main>
+<body class="body_container">
+    <header class="head_for_every_page">
+        <div>
+            <a href="1_main_page1.html">
+                <img src="images/logo.png" alt="Website Logo" class="web_logo">
+            </a>
         </div>
-    </body>
 
+
+
+    
+<!-- social icons using api -->
+        <div>
+            <ul class="slider-nav">
+                <li class="slider-nav-item">
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                </li>
+                <li class="slider-nav-item">
+                    <a href="https://x.com/RaviDahiya00"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li class="slider-nav-item">
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li class="slider-nav-item">
+                    <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
+                </li>
+                <li class="slider-nav-item">
+                    <a href="https://github.com/Ravi-Dahiya-00"><i class="fab fa-github"></i></a>
+                </li>
+            </ul>
+            
+        </div>
+    
+                                      
+    </header>
+
+
+
+
+    <div class="container">
+
+    
+        
+
+        <main class="main_container">
+
+            <!-- card 1 start -->
+            <div class="card_container">
+                <a href="https://youtu.be/zAICu_dIlUs?si=qNV0szds3knNW-dc" class="card_image_container">
+                    <img
+                        src="recipe_images/pizza_image.jpg"
+                        alt="card 1 image"
+                        class="card_image"
+                        loading="lazy"
+                    />
+                </a>
+
+                <div class="card_title_container">
+                        <h2 class="card_title">Garden Fresh Veggie Pizza</h2>
+                    <p class="card_desc">
+                        A delightful blend of fresh veggies, melted cheese, and a crispy crust. Perfect for veggie lovers, 
+                        topped with bell peppers, onions, olives, and tomatoes for a burst of flavor in every bite!
+                    </p>
+                </div>
+
+                <div class="card_footer_container">
+
+                    <div class="author_container">
+                        <div class="author_avatar_container">
+                            <img 
+                                src="https://api.dicebear.com/7.x/notionists/svg?seed=Ranveer?size=64"
+                                loading="lazy"
+                                class="author_avatar"
+                                alt="avatar 1"
+                            />
+                        </div>
+                        <div class="author_info_container">
+                            <span class="author_name">
+                               <a href="https://en.wikipedia.org/wiki/Ranveer_Brar">Chef Ranveer Brar 
+                            </a> 
+                            </span>
+                            <span class="author_date">
+                                8 February 1978
+                            </span>
+                        </div>
+                    </div>
+
+                    <div >
+                        <span class="card_tag_container">Veggie Delights</span>
+                    </div>
+                </div>
+            </div>
+            <!-- card 1 ends here -->
+
+
+
+            <!-- card 2 starts here  -->
+
+            <div class="card_container">
+                <a href="https://youtu.be/SZByh7nXp1U?si=NXDO_dqAIjvsrJxD" class="card_image_container">
+                    <img
+                        src="recipe_images/veg_birayni.jpg"
+                        alt="card 1 image"
+                        class="card_image"
+                        loading="lazy"
+                    />
+                </a>
+
+                <div class="card_title_container">
+                        <h2 class="card_title">Vegetable Biryani </h2>
+                    <p class="card_desc">
+                        "A fragrant, flavorful rice dish layered with fresh vegetables and aromatic spices. 
+                        This Vegetable Biryani is a comforting, colorful meal perfect for any occasion!"
+                    </p>
+                </div>
+
+                <div class="card_footer_container">
+
+                    <div class="author_container">
+                        <div class="author_avatar_container">
+                            <img 
+                                src="https://api.dicebear.com/7.x/notionists/svg?seed=kunal_kapur?size=64"
+                                loading="lazy"
+                                class="author_avatar"
+                                alt="avatar 1"
+                            />
+                        </div>
+                        <div class="author_info_container">
+                            <span class="author_name">
+                               <a href="https://en.wikipedia.org/wiki/Kunal_Kapur">
+                                Kunal Kapur
+                            </a>
+                            </span>
+                            <span class="author_date">
+                                18 September 1979
+                            </span>
+                        </div>
+                    </div>
+
+                    <div >
+                        <span class="card_tag_container">Indian Cuisine</span>
+                    </div>
+                </div>
+            </div>
+            <!-- card 2 ends here -->
+
+
+
+
+            <!-- card 3 starts here  -->
+            <div class="card_container">
+                <a href="https://youtu.be/SdXOUltjho4?si=u5ZkrhGO21fCvWMt" class="card_image_container">
+                    <img
+                        src="recipe_images/veg_panner_tikka.webp"
+                        alt="card 1 image"
+                        class="card_image"
+                        loading="lazy"
+                    />
+                </a>
+
+                <div class="card_title_container">
+                        <h2 class="card_title">Paneer Tikka</h2>
+                    <p class="card_desc">
+                        Succulent cubes of paneer marinated in a blend of yogurt, spices, and herbs, then grilled to perfection. 
+                        A popular Indian appetizer, this dish is smoky, spicy, and full of flavor, perfect for serving at parties or enjoying as a snack.
+                    </p>
+                </div>
+
+                <div class="card_footer_container">
+
+                    <div class="author_container">
+                        <div class="author_avatar_container">
+                            <img 
+                                src="https://api.dicebear.com/7.x/notionists/svg?seed=manwithmask=64"
+                                loading="lazy"
+                                class="author_avatar"
+                                alt="avatar 1"
+                            />
+                        </div>
+                        <div class="author_info_container">
+                            <a href="https://www.bharatzkitchen.com/about-me/">
+                            <span class="author_name">
+                                Bharatzkitchen
+                            </span>
+                        </a>
+                            <span class="author_date">
+                                Sept 9, 1991
+                            </span>
+                        </div>
+                    </div>
+
+                    <div >
+                        <span class="card_tag_container">Tandoori Dishes</span>
+                    </div>
+                </div>
+            </div>
+            <!-- card 3 ends here -->
+
+
+
+
+
+            <!-- card 4 starts here  -->
+
+            <div class="card_container">
+                <a href="https://youtu.be/27oHn30Az4E?si=njhMjuZjQ1PiP4KP" class="card_image_container">
+                    <img
+                        src="recipe_images/veg_noodles.jpeg"
+                        alt="card 1 image"
+                        class="card_image"
+                        loading="lazy"
+                    />
+                </a>
+
+                <div class="card_title_container">
+                    <a href="#" class="card_title_anchor">
+                        <h2 class="card_title">Veg Hakka Noodles</h2>
+                    </a>
+                    <p class="card_desc">
+                        A quick and flavorful Indo-Chinese dish made by stir-frying noodles with a colorful mix of vegetables,
+                         soy sauce, and aromatic spices. Perfect for a light, satisfying meal or snack.
+                    </p>
+                </div>
+
+                <div class="card_footer_container">
+
+                    <div class="author_container">
+                        <div class="author_avatar_container">
+                            <img 
+                                src="https://api.dicebear.com/7.x/notionists/svg?seed=Sanjeev?size=64"
+                                loading="lazy"
+                                class="author_avatar"
+                                alt="avatar 1"
+                            />
+                        </div>
+                        <div class="author_info_container">
+                            <a href="https://en.wikipedia.org/wiki/Sanjeev_Kapoor">
+                            <span class="author_name">
+                                Sanjeev Kappor 
+                            </span>
+                        </a>
+                            <span class="author_date">
+                                10 April 1964 
+                            </span>
+                        </div>
+                    </div>
+
+                    <div >
+                        <span class="card_tag_container">Technology</span>
+                    </div>
+                </div>
+            </div>
+            <!-- card 4 ends here -->
+
+
+
+
+
+            <!-- card 5 starts here  -->
+
+            <div class="card_container">
+                <a href="https://youtu.be/ektsiKFVqks?si=dS2siYD97jQve7Az" class="card_image_container">
+                    <img
+                        src="recipe_images/Stuffed_Bell_Peppers.jpg"
+                        alt="card 1 image"
+                        class="card_image"
+                        loading="lazy"
+                    />
+                </a>
+
+                <div class="card_title_container">
+                    <a href="#" class="card_title_anchor">
+                        <h2 class="card_title">Stuffed Bell Peppers</h2>
+                    </a>
+                    <p class="card_desc">
+                        Colorful bell peppers filled with a delicious mixture of rice,
+                         vegetables, and spices, baked to perfection. A healthy and flavorful dish that's both satisfying and visually appealing.
+                    </p>
+                </div>
+
+                <div class="card_footer_container">
+
+                    <div class="author_container">
+                        <div class="author_avatar_container">
+                            <img 
+                                src="https://api.dicebear.com/7.x/notionists/svg?seed=John?size=64"
+                                loading="lazy"
+                                class="author_avatar"
+                                alt="avatar 1"
+                            />
+                        </div>
+                        <div class="author_info_container">
+                            <a href="https://preppykitchen.com/meet-john/">
+                            <span class="author_name">
+                                John Kanell
+                            </span>
+                        </a>
+                            <span class="author_date">
+                                September 20, 1979
+                            </span>
+
+                        </div>
+                    </div>
+
+                    <div >
+                        <span class="card_tag_container">Comfort Food</span>
+                    </div>
+                </div>
+            </div>
+            <!-- card 5 ends here  -->
+
+
+
+
+
+
+
+
+            <!-- card 6 starts here  -->
+
+            <div class="card_container">
+                <a href="https://youtu.be/BxpRioLNP0s?si=O9SSQWJVScSTXkJT" class="card_image_container">
+                    <img
+                        src="recipe_images/vegetarian-korma.avif"
+                        alt="card 1 image"
+                        class="card_image"
+                        loading="lazy"
+                    />
+                </a>
+
+                <div class="card_title_container">
+                    <a href="#" class="card_title_anchor">
+                        <h2 class="card_title">Vegetable Korma</h2>
+                    </a>
+                    <p class="card_desc">
+                        A rich and creamy Indian curry made with a medley of mixed vegetables, cooked
+                         in a fragrant blend of spices and coconut milk. Perfectly balanced in flavors, 
+                         this dish is a vegetarian delight, often paired with naan or rice.
+                    </p>
+                </div>
+
+                <div class="card_footer_container">
+
+                    <div class="author_container">
+                        <div class="author_avatar_container">
+                            <img 
+                                src="https://api.dicebear.com/7.x/notionists/svg?seed=?riyasize=64"
+                                loading="lazy"
+                                class="author_avatar"
+                                alt="avatar 1"
+                            />
+                        </div>
+                        <div class="author_info_container">
+                            <a href="#">
+                            <span class="author_name">
+                                Vaishali's Recipe
+                            </span>
+                        </a>
+                            <span class="author_date">
+                                march 3, 1976
+                            </span>
+                        </div>
+                    </div>
+
+                    <div >
+                        <span class="card_tag_container">Indian Curry</span>
+                    </div>
+                </div>
+            </div>
+            <!-- card 6 ends here -->
+
+
+
+
+
+
+
+
+            <!-- card 7 starts here  -->
+
+            <div class="card_container">
+                <a href="https://youtu.be/tp0BmholJic?si=cO149suAF3Nd9GJa" class="card_image_container">
+                    <img
+                        src="recipe_images/tandoori_broocli.jpeg"
+                        alt="card 1 image"
+                        class="card_image"
+                        loading="lazy"
+                    />
+                </a>
+
+                <div class="card_title_container">
+                    <a href="#" class="card_title_anchor">
+                        <h2 class="card_title">Tandoori Broccoli Delight</h2>
+                    </a>
+                    <p class="card_desc">
+                        Smoky, charred broccoli marinated in a tangy yogurt and spice blend, grilled to perfection.
+                         This vibrant dish is bursting with flavors and is a healthy twist on traditional tandoori!
+                    </p>
+                </div>
+
+                <div class="card_footer_container">
+
+                    <div class="author_container">
+                        <div class="author_avatar_container">
+                            <img 
+                                src="https://api.dicebear.com/7.x/notionists/svg?seed=John?size=64"
+                                loading="lazy"
+                                class="author_avatar"
+                                alt="avatar 1"
+                            />
+                        </div>
+                        <div class="author_info_container">
+                            <span class="author_name">
+                                <a href="https://en.wikipedia.org/wiki/Ranveer_Brar">Chef Ranveer Brar 
+                             </a> 
+                             </span>
+                             <span class="author_date">
+                                 8 February 1978
+                             </span> 19, 2021
+                            </span>
+                        </div>
+                    </div>
+
+                    <div >
+                        <span class="card_tag_container">Tandoori</span>
+                    </div>
+                </div>
+            </div>
+            <!-- card 7 ends here  -->
+
+
+
+
+
+
+
+            <!-- card 8 starts here  -->
+
+            <div class="card_container">
+                <a href="https://youtu.be/Ze_sWsJaIcs?si=IJS3qdRblSb3y8oY" class="card_image_container">
+                    <img
+                        src="recipe_images/Mixed-pakora.webp"
+                        alt="card 1 image"
+                        class="card_image"
+                        loading="lazy"
+                    />
+                </a>
+
+                <div class="card_title_container">
+                    <a href="" class="card_title_anchor">
+                        <h2 class="card_title">Crispy Mixed Vegetable Pakoras</h2>
+                    </a>
+                    <p class="card_desc">
+                        : A crunchy, flavorful blend of fresh vegetables coated in spiced chickpea batter and
+                         deep-fried to golden perfection. These pakoras make for a delightful snack or appetizer!
+                    </p>
+                </div>
+
+                <div class="card_footer_container">
+
+                    <div class="author_container">
+                        <div class="author_avatar_container">
+                            <img 
+                                src="https://api.dicebear.com/7.x/notionists/svg?seed=kavita?size=64"
+                                loading="lazy"
+                                class="author_avatar"
+                                alt="avatar 1"
+                            />
+                        </div>
+                        <div class="author_info_container">
+                            <span class="author_name">
+                                <a href="https://youtube.fandom.com/wiki/Kabita's_Kitchen">
+                                    Kabita Singh
+                                </a>
+                            </span>
+                            <span class="author_date">
+                                February 21, 1981,
+                            </span>
+                        </div>
+                    </div>
+
+                    <div  >
+                        <span class="card_tag_container">Crispy</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 8 ends here  -->
+
+        </main>
+
+    </div>
+    
+</body>
 </html>
+<!-- 
+
+https://api.dicebear.com/7.x/notionists/svg?seed=John?size=64
+https://source.unsplash.com/random/600×400?healthy -->
