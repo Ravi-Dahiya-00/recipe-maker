@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="foodcater.css">
+    
+ 
+
+ 
+</head>
+<body>
+    <h1>Recipe Search</h1>
+    <form id="search-form">
+        <input type="text" id="ingredients" placeholder="Ingredients (e.g., tomato, cheese)" />
+        <select id="cuisine">
+            <option value="">Any Cuisine</option>
+            <option value="italian">Italian</option>
+            <option value="mexican">Mexican</option>
+            <option value="indian">Indian</option>
+        </select>
+        <select id="diet">
+            <option value="">Any Diet</option>
+            <option value="vegetarian">Vegetarian</option>
+            <option value="non-vegetarian">Non-Vegetarian</option>
+        </select>
+        <button type="submit">Search</button>
+    </form>
+    <div id="recipe-container" class="grid"></div>
+    <script src="foodcater.js"></script>
+ 
+
+</body>
+</html>
