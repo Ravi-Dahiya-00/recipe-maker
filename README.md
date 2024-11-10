@@ -48,10 +48,3 @@ The website is hosted online with API integrations for fetching data and images.
 9. OpenAI's [ChatGPT](https://chat.openai.com/)
 10. Various free internet resources
 
-# Website Screenshots
-
-Here are some screenshots of the website:
-
-![Home Page](1_Web_page_Screenshots/Home_page.png)
-![Recipe Page](1_Web_page Screenshots/Recipe_page.png)
-
