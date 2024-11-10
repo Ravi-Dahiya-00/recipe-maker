@@ -52,5 +52,6 @@ The website is hosted online with API integrations for fetching data and images.
 
 Here are some screenshots of the website:
 
-![Home Page](home page/1_Web_page Screenshots/Home_page.png)
-![Recipe Page](Home_page_folder/1_Web_page Screenshots/Recipe_page.png)
+![Home Page](1_Web_page_Screenshots/Home_page.png)
+![Recipe Page](1_Web_page Screenshots/Recipe_page.png)
+
