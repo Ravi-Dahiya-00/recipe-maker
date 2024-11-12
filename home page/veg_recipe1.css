@@ -6,6 +6,7 @@ box-sizing: border-box;
 body{
 height: 100%;
 width: 100%;
+background-color: #40669548;
 }
 
 a{
@@ -34,7 +35,7 @@ border-radius: 70%;
 /* for 3d animation of web logo */
 
 .web_logo{
-transform: perspective(400px) rotate3d( 1, 0, 1, 15deg);
+/* transform: perspective(400px) rotate3d( 1, 0, 1, 15deg); */
 opacity: linear-gradient (135deg, #00c 40% , #000, #000c 60%);
 }
 .web_logo:hover {
