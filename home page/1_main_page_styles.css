@@ -1,449 +1,575 @@
 
 
 *{
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-   
-}
-body{
-   background-image: url(images/background_image.jpg);
-           /* background-position: */
-           background-size: cover;
-           background-repeat: repeat;
-           margin: 0;
-           height: 10px;
-
-}
-.head_for_every_page{
-   background-color: #0093E9;
-background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
-display: flex;
-justify-content: space-between;
-align-items: center;
-}
-
-.web_logo{
-   width: 120px;
-   height: 80%;
-   object-fit: cover;
-   border-radius: 70%;
-}
-
-/* for 3d animation of web logo */
-
-.web_logo{
-  /* transform: perspective(400px) rotate3d( 1, 0, 1, 15deg); */
-  opacity: linear-gradient (135deg, #00c 40% , #000, #000c 60%);
-}
-.web_logo:hover {
-   transform: perspective(400px) rotate3d( 1, -1, 1 , -15deg);
-   /* transform: scale(1.2); */
-}
-
-
-
-
-
-
-
-
-
-/* list of social media tags  */
-       
-/* social icons using api  */
-.slider-nav {
-   list-style: none;
-   display: flex;
-   gap: 30px; /* gap between the social icons  */
-   padding: 0;
-}
-
-.slider-nav-item {
-   font-size: 30px;
-   margin: 20px;
-}
-
-
-a{
-   text-decoration:none;
-}
-
-
-
-
-
-
-
-
-.website_page_linker{
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-}
-
-
-/* middle image of website name flavour craft hover  */
-.rotating_image {
-    transition: transform 1s; /* Smooth rotation */
-}
-.rotating_image:hover {
-    transform: rotate(360deg); /* Rotate the image on hover */
-}
-
-
-.pages_detail{
-   font-size: large;              /*it will increase the font size of content between two buttons */         
-   color: #000;
-   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-   font-weight: 500;
-   text-shadow: 2px 2px 4px rgba(1, 1, 1, 0.6);
-
-}
-
-
-
-
-
-
-
-
-
-
-/*button hover using 3 d animation from {https://dev.to/webdeasy/top-20-css-buttons-animations-f41}*/
-.glow-on-hover {
-   margin-left: 20px;        
-   margin-right: 20px;                           /* margin to get buttons side from left and right   */
-   width: 220px;
-   height: 50px;                                /* width and height of the box */
-   border: none; 
-   outline: none;
-   color: #fff;                               /* text color white in the button  */
-   background: #111;
-   cursor: pointer;
-   position: relative;
-   z-index: 0;
-   border-radius: 10px;
-}
-
-.glow-on-hover:before {
-   content: '';
-   background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-   position: absolute;
-   top: -2px;
-   left:-2px;
-   background-size: 400%;
-   z-index: -1;
-   filter: blur(5px);
-   width: calc(100% + 6px);
-   height: calc(100% + 6px);
-   animation: glowing 20s linear infinite;
-   opacity: 0;
-   transition: opacity .3s ease-in-out;
-   border-radius: 10px;
-}
-
-.glow-on-hover:active {
-   color: #000
-}
-
-.glow-on-hover:active:after {
-   background: transparent;
-}
-
-.glow-on-hover:hover:before {
-   opacity: 1;
-}
-
-.glow-on-hover:after {
-   z-index: -1;
-   content: '';
-   position: absolute;
-   width: 100%;
-   height: 100%;
-   background: #111;
-   left: 0;
-   top: 0;
-   border-radius: 10px;
-}
-
-
-
-
-
-
-
-
-
-/* image body and defining content */
-
-/* Keyframes for animations */
-   /* this will make as it is coming from down when we will refresh the the web page */
-@keyframes glowing {
-   0% { background-position: 0 0; }
-   50% { background-position: 400% 0; }
-   100% { background-position: 0 0; }
-}
-
-
- 
-@keyframes zoomIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@keyframes bottomIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-
-
-
-
-
-
-
-  
-
-
-
-       section {
-           display: flex;
-           justify-content: center;
-           align-items: center;
-           width: 100%;
-           height: 100vh;
-       }
-
-
-       /* here there is no use because we have already given background image already in body  */
-       /* section {
-           background-image: url(images/background_image.jpg);
-           background-position: center;
-           background-size: cover;
-           background-repeat: no-repeat;
-       } */
-
-       .web_image_section-box {
-        /* this will add a transparency in background because of value of these color , border and box-shadow. */
-           background-color: transparent;
-           border: 2px solid rgba(255, 255, 255, 0.2);
-           box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2);
-           backdrop-filter: blur(120px);
-
-           border-radius: 30px;
-           height: 85vh;
-           width: 85%;
-           overflow: hidden;
-       }
-
-       .web_image_content-grid {
-           display: grid;
-           grid-template-columns: 1fr 1fr;              /* this will divide the box in two parts one for image and one for content. */   
-           height: 100%;                                 /* takes 100% height of the parent container */
-           padding: 0 50px;                             /* adds padding 0 on the top and bottom and 50px on the left and right */
-       }
-
-       .left-grid,
-       .right-grid {
-           display: flex;
-           flex-direction: column;
-           justify-content: center;
-       }
-
-       /* #about .right-grid {
-           align-items: center;
-       } */
-
-
-       /* image inside the box it is applying on that */
-       .web_image_about-img {
-           width: 90%;
-           animation: zoomIn 1.4s ease-in-out forwards;
-           animation-delay: 0.5s;
-           border-radius: 7%;
-         
-       }
-
-       .web_image_para{
-           animation: zoomIn 1.4s ease-in-out forwards;
-           animation-delay: 0.5s;
-           border-radius: 10%;
-           color: white;
-       }
-
-       #about .left-grid p,
-       #web_image_description .left-grid p {
-           font-size: 18px;
-           line-height: 1.8;
-           color: rgb(249, 243, 243);
-           animation: bottomIn 1s ease-in-out forwards;
-           animation-delay: 0.4s;
-       }
-
-       .web_image_section-sub {
-           animation: bottomIn 1s ease-in-out forwards;
-           animation-delay: 0.2s;
-       }
-
-       /* .web_image_section-title {
-           font-size: 4rem;
-           line-height: 1.2;
-           font-weight: 800;
-           letter-spacing: 1px;
-           text-transform: uppercase;
-           margin-bottom: 20px;
-           animation: bottomIn 1s ease-in-out forwards;
-           animation-delay: 0.3s;
-       } */
-
-
-
-
-
-       /* web page button to find recipes styling and view recipe also */
-       .web_image_action-btn,.top_recipe_action-btn {
-           font-size: 18px;
-           color: rgb(255, 255, 255);
-           font-weight: 600;
-           letter-spacing: 1px;
-           text-transform: capitalize;
-           height: 45px;
-           width: 200px;
-           background-color: #00FF26;
-           border-radius: 25px;
-           cursor: pointer;
-           transition: 0.3s;
-           margin-top: 40px;
-           animation: bottomIn 1s ease-in-out forwards;
-           animation-delay: 0.5s;
-       }
-
-       .web_image_action-btn:before{
-        content: '';
-        background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-        position: absolute;
-        top: -2px;
-        left:-2px;
-        background-size: 400%;
-        z-index: -1;
-        filter: blur(5px);
-        width: calc(100% + 6px);
-        height: calc(100% + 6px);
-        animation: glowing 20s linear infinite;
-        opacity: 0;
-        transition: opacity .3s ease-in-out;
-        border-radius: 10px;
-       }
-       
-        .web_image_action-btn:active {
-            color: #000
-        }
-        
-        .web_image_action-btn:after {
-            background: transparent;
-        }
-        
-        .web_image_action-btn:before {
-            opacity: 1;
-        }
-        
-        .web_image_action-btn:after {
-            z-index: -1;
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: #111;
-            left: 0;
-            top: 0;
-            border-radius: 10px;
-        }
-
-
-
-
-
-
-
-
-
-        /* top recipe */
-     .top_recipe_description{
-        font-size: 18px;
-        line-height: 1.8;
-        color: rgb(249, 243, 243);
-        animation: bottomIn 1s ease-in-out forwards;
-        animation-delay: 0.4s;
-     }
-     .top_recpie_section_box{
-         /* this will add a transparency in background because of value of these color , border and box-shadow. */
-         background-color: transparent;
-         border: 2px solid rgba(255, 255, 255, 0.2);
-         box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2);
-         backdrop-filter: blur(120px);
-
-         border-radius: 30px;
-         height: 85vh;
-         width: 85%;
-         overflow: hidden;
-     }
-
-     .top_recipe_content_grid{
-        display: grid;
-        grid-template-columns: 1fr 1fr;              /* this will divide the box in two parts one for image and one for content. */   
-        height: 100%;                                 /* takes 100% height of the parent container */
-        padding: 0 50px;                             /* adds padding 0 on the top and bottom and 50px on the left and right */
-     }
-
-     .top_recipe_head{
-        animation: bottomIn 1s ease-in-out forwards;
-        animation-delay: 0.2s;
-     }
-    .top_recipe_name{
-        font-size: 4rem;
-        line-height: 1.2;
-        font-weight: 800;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        margin-bottom: 20px;
-        animation: bottomIn 1s ease-in-out forwards;
-        animation-delay: 0.3s;
-    }
-
-    .top_recipe_para{
-        animation: zoomIn 1.4s ease-in-out forwards;
-        animation-delay: 0.5s;
-        border-radius: 10%;
-        color: white;
-    }
-
-    .top_recipe_action-btn{
-
-    }
-
-
-
-
-
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     
-.copyright-wrap{ background:black; overflow:hidden; padding-top:30px; padding-bottom:30px;}
-.copyright{ width:960px; margin:0 auto;}
-.copyright .content{ text-align:center;}
-.copyright .content a{ text-decoration:none; color:#1491c1;}
-.copyright .content a:hover{color:#062c5b;}
-.copyright .content a.active{color:#062c5b;}
+ }
+ body{
+    background-image: url(images/background_image.jpg);
+            /* background-position: */
+            background-size: cover;
+            background-repeat: repeat;
+            margin: 0;
+            height: 10px;
+ 
+ }
+ .head_for_every_page{
+    background-color: #0093E9;
+ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ }
+ 
+ .web_logo{
+    width: 120px;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 70%;
+ }
+ 
+ /* for 3d animation of web logo */
+ 
+ /* 
+ .web_logo{
+ transform: perspective(400px) rotate3d( 1, 0, 1, 15deg); 
+    opacity: linear-gradient (135deg, #00c 40% , #000, #000c 60%); 
+ }    */
+     
+ .web_logo:hover {
+    transform: perspective(400px) rotate3d( 1, -1, 1 , -15deg);
+    /* transform: scale(1.2); */
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ /* list of social media tags  */
+        
+ /* social icons using api  */
+ .slider-nav {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* gap between the social icons  */
+    padding: 0;
+ }
+ 
+ .slider-nav-item {
+    font-size: 30px;
+    margin: 20px;
+ }
+ 
+ 
+ a{
+    text-decoration:none;
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ .website_page_linker{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+ 
+ 
+ /* middle image of website name flavour craft hover  */
+ .rotating_image {
+     transition: transform 1s; /* Smooth rotation */
+ }
+ .rotating_image:hover {
+     transform: rotate(360deg); /* Rotate the image on hover */
+ }
+ 
+ 
+ .pages_detail{
+    font-size: large;              /*it will increase the font size of content between two buttons */         
+    color: #000;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 500;
+    text-shadow: 2px 2px 4px rgba(1, 1, 1, 0.6);
+ 
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ /*button hover using 3 d animation from {https://dev.to/webdeasy/top-20-css-buttons-animations-f41}*/
+ .glow-on-hover {
+    margin-left: 20px;        
+    margin-right: 20px;                           /* margin to get buttons side from left and right   */
+    width: 220px;
+    height: 50px;                                /* width and height of the box */
+    border: none; 
+    outline: none;
+    color: #fff;                               /* text color white in the button  */
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+ }
+ 
+ .glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+ }
+ 
+ .glow-on-hover:active {
+    color: #000
+ }
+ 
+ .glow-on-hover:active:after {
+    background: transparent;
+ }
+ 
+ .glow-on-hover:hover:before {
+    opacity: 1;
+ }
+ 
+ .glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ /* image body and defining content */
+ 
+ /* Keyframes for animations */
+    /* this will make as it is coming from down when we will refresh the the web page */
+ @keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+ }
+ 
+ 
+  
+ @keyframes zoomIn {
+     from {
+         opacity: 0;
+         transform: scale(0.9);
+     }
+     to {
+         opacity: 1;
+         transform: scale(1);
+     }
+ }
+ 
+ @keyframes bottomIn {
+     from {
+         opacity: 0;
+         transform: translateY(30px);
+     }
+     to {
+         opacity: 1;
+         transform: translateY(0);
+     }
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+        }
+ 
+ 
+        /* here there is no use because we have already given background image already in body  */
+        /* section {
+            background-image: url(images/background_image.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        } */
+ 
+        .web_image_section-box {
+         /* this will add a transparency in background because of value of these color , border and box-shadow. */
+            background-color: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(120px);
+ 
+            border-radius: 30px;
+            height: 85vh;
+            width: 85%;
+            overflow: hidden;
+        }
+ 
+        .web_image_content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;              /* this will divide the box in two parts one for image and one for content. */   
+            height: 100%;                                 /* takes 100% height of the parent container */
+            padding: 0 50px;                             /* adds padding 0 on the top and bottom and 50px on the left and right */
+        }
+ 
+        .left-grid,
+        .right-grid {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+ 
+        /* #about .right-grid {
+            align-items: center;
+        } */
+ 
+ 
+        /* image inside the box it is applying on that */
+        .web_image_about-img {
+            width: 90%;
+            animation: zoomIn 1.4s ease-in-out forwards;
+            animation-delay: 0.5s;
+            border-radius: 7%;
+          
+        }
+ 
+        .web_image_para{
+            animation: zoomIn 1.4s ease-in-out forwards;
+            animation-delay: 0.5s;
+            border-radius: 10%;
+            color: white;
+        }
+ 
+        #about .left-grid p,
+        #web_image_description .left-grid p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: rgb(249, 243, 243);
+            animation: bottomIn 1s ease-in-out forwards;
+            animation-delay: 0.4s;
+        }
+ 
+        .web_image_section-sub {
+            animation: bottomIn 1s ease-in-out forwards;
+            animation-delay: 0.2s;
+        }
+ 
+        /* .web_image_section-title {
+            font-size: 4rem;
+            line-height: 1.2;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            animation: bottomIn 1s ease-in-out forwards;
+            animation-delay: 0.3s;
+        } */
+ 
+ 
+ 
+ 
+ 
+        /* web page button to find recipes styling and view recipe also */
+        .web_image_action-btn,.top_recipe_action-btn {
+            font-size: 18px;
+            color: rgb(255, 255, 255);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: capitalize;
+            height: 45px;
+            width: 200px;
+            background-color: #00FF26;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 40px;
+            animation: bottomIn 1s ease-in-out forwards;
+            animation-delay: 0.5s;
+        }
+ 
+        .web_image_action-btn:before{
+         content: '';
+         background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+         position: absolute;
+         top: -2px;
+         left:-2px;
+         background-size: 400%;
+         z-index: -1;
+         filter: blur(5px);
+         width: calc(100% + 6px);
+         height: calc(100% + 6px);
+         animation: glowing 20s linear infinite;
+         opacity: 0;
+         transition: opacity .3s ease-in-out;
+         border-radius: 10px;
+        }
+        
+         .web_image_action-btn:active {
+             color: #000
+         }
+         
+         .web_image_action-btn:after {
+             background: transparent;
+         }
+         
+         .web_image_action-btn:before {
+             opacity: 1;
+         }
+         
+         .web_image_action-btn:after {
+             z-index: -1;
+             content: '';
+             position: absolute;
+             width: 100%;
+             height: 100%;
+             background: #111;
+             left: 0;
+             top: 0;
+             border-radius: 10px;
+         }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+         /* top recipe */
+         .top_recipe_left-grid , .top_recipe_right-grid{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+         }
+         
+      .top_recipe_description{
+         font-size: 18px;
+         line-height: 1.8;
+         color: rgb(249, 243, 243);
+         animation: bottomIn 1s ease-in-out forwards;
+         animation-delay: 0.4s;
+      }
+      .top_recpie_section_box{
+          /* this will add a transparency in background because of value of these color , border and box-shadow. */
+          background-color: transparent;
+          border: 2px solid rgba(255, 255, 255, 0.2);
+          box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2);
+          backdrop-filter: blur(120px);
+ 
+          border-radius: 30px;
+          height: 85vh;
+          width: 85%;
+          overflow: hidden;
+      }
+ 
+      .top_recipe_content_grid{
+         display: grid;
+         grid-template-columns: 1fr 1fr;              /* this will divide the box in two parts one for image and one for content. */   
+         height: 100%;                                 /* takes 100% height of the parent container */
+         padding: 0 50px;                             /* adds padding 0 on the top and bottom and 50px on the left and right */
+      }
+ 
+      .top_recipe_head{
+         animation: bottomIn 1s ease-in-out forwards;
+         animation-delay: 0.2s;
+      }
+     .top_recipe_name{
+         font-size: 4rem;
+         line-height: 1.2;
+         font-weight: 800;
+         letter-spacing: 1px;
+         text-transform: uppercase;
+         margin-bottom: 20px;
+         animation: bottomIn 1s ease-in-out forwards;
+         animation-delay: 0.3s;
+     }
+ 
+     .top_recipe_para{
+         animation: zoomIn 1.4s ease-in-out forwards;
+         animation-delay: 0.5s;
+         border-radius: 10%;
+         color: white;
+     }
+ 
+     .top_recipe_action-btn{
+ 
+     }
+ 
+ 
+ 
+ 
+ 
+     
+ .copyright-wrap{ background:black; overflow:hidden; padding-top:30px; padding-bottom:30px;}
+ .copyright{ width:960px; margin:0 auto;}
+ .copyright .content{ text-align:center;}
+ .copyright .content a{ text-decoration:none; color:#1491c1;}
+ .copyright .content a:hover{color:#062c5b;}
+ .copyright .content a.active{color:#062c5b;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     /* About Section */
+
+     #about{
+        background-color: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(120px);
+
+        border-radius: 30px;
+        height: 85vh;
+        width: 85%;
+        overflow: hidden;
+        margin-left: 8%;
+
+     }
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    padding: 0 50px;
+  }
+  
+  .about-img {
+    width: 90%;
+    animation: zoomIn 1.4s ease-in-out forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
+  }
+  
+  .left-grid,
+  .right-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  #about .right-grid {
+    align-items: center;
+  }
+  
+  .section-sub {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #00FF26;
+    text-transform: capitalize;
+    animation: bottomIn 1s ease-in-out forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
+  }
+  
+  .section-title {
+    font-size: 4rem;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    animation: bottomIn 1s ease-in-out forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+  }
+  
+  #about .left-grid p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: rgb(233, 233, 233);
+    animation: bottomIn 1s ease-in-out forwards;
+    animation-delay: 0.4s;
+    opacity: 0;
+  }
+  
+  .action-btn {
+    font-size: 18px;
+    color: black;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    height: 45px;
+    width: 200px;
+    background-color: #00FF26;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 40px;
+    animation: bottomIn 1s ease-in-out forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+  }
+  
+  .action-btn:hover {
+    background-color: #00d11f;
+  }
