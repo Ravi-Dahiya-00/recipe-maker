@@ -18,6 +18,7 @@ The Recipe Maker website is a web-based platform designed to provide users with 
   - CodePen
   - Dev.to
 
+
 ## Features of the Website
 - **Recipe Listings**: Display multiple recipes with title, description, and images.
 - **Recipe Detail Page**: Each recipe has a detailed page with ingredients, instructions, and a video.
