@@ -26,6 +26,8 @@ The Recipe Maker website is a web-based platform designed to provide users with 
 ## Deployment
 The website is hosted online with API integrations for fetching data and images. The project is deployed and accessible via a public URL.
 
+Note: The API key used in this project is from a free API plan, and you can generate your own free API key from the provider's website.
+
 ## Challenges Faced
 - API integration
 - Responsive design issues
